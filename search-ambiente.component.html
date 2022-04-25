@@ -1,0 +1,25 @@
+<!-- Pollution -->
+<div fxLayout="column" fxLayoutAlign="space-around center">
+  <div fxFlex fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxFlex="auto" class="search-config-pollution">
+      <mat-form-field appearance="fill">
+        <mat-label>Inquinanti</mat-label>
+        <mat-select [(ngModel)]="pollutionSelected" name="pollution">
+          <mat-option *ngFor="let poll of pollution" [value]="poll">
+            {{ poll }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxFlex="10">
+      <button *ngIf="isLocation"
+              type="button"
+              color="primary"
+              mat-icon-button
+              aria-label="data graph icon"
+              (click)="openGraph()">
+          <mat-icon>show_chart</mat-icon>
+        </button>
+    </div>
+  </div>
+</div>
